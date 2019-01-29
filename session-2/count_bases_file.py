@@ -3,7 +3,7 @@ c_count=0
 g_count=0
 t_count = 0
 lenght=0
-filename= input("Please introduce a file name ")
+filename= input("Please introduce a file name: ")
 data = open (filename, "r")
 for line in data:
     line.replace(" ", "")

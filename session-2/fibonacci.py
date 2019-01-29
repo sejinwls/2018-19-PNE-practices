@@ -16,4 +16,4 @@ def fibonacci(n):
 
 term = int(input("Please introduce the number of the term: "))
 value = fibonacci(term)
-print("The value for that term is ", value)
+print("The value for the term is ", value)

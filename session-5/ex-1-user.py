@@ -1,20 +1,31 @@
-def count_a(seq):
+
+def count_bases(seq):
     """"THis function is for counting the number of A's in the sequence"""
 
     # Counter for the As
-    result = 0
+    count_a = 0
+    count_c = 0
+    count_g = 0
+    count_t = 0
 
     for b in seq:
         if b == "A":
-            result += 1
+            count_a += 1
+        elif b == "C":
+            count_c += 1
+        elif b == "G":
+            count_g += 1
+        elif b == "T":
+            count_t += 1
+
 
     # Return the result
-    return result
+    return count_a, count_c, count_g, count_t
 
 
 # Main program
 s = input("Enter the sequence: ")
-na = count_a(s)
+a,c,g,t = count_bases(s)
 
 
 # Calculate the total sequence lenght

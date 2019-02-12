@@ -1,0 +1,33 @@
+Client
+computer:
+-mobile phone
+-tables
+-running multiple programs
+ Server
+ runs in a computer- One computer several servers
+ computers connected to each other in groups or networks
+ to send a menssage client-server we need to identify the computer containing the server through the IP adress
+ IP adress changes depending on the computers to which you are connected.
+
+Phone IP adress at URJC IS :  10.0.50.131
+
+teachers ip: 212.128.253.64
+my ip 212.128.253.108
+ping ipadress checks if the ip adress is active
+
+*ping time to 8.8.8.8
+time=3.58 ms
+
+ping time to my own ip
+time=0.058 ms
+ping to partner time=0.561 ms
+ping to phone
+time:
+ time=47.4 ms
+ time=69.3 ms
+ time=92.3 ms
+ time=114 ms
+ time=35.0 ms
+url identifying of a network interface for humans
+ip --->  port ---> server 
+port 80 usually has the server

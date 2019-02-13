@@ -1,4 +1,5 @@
 from seq import Seq
+# Program that creates and prints information about sequences
 
 s1 = Seq("ACGT")
 s2 = Seq("GTCAGTCA")

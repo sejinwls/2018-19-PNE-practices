@@ -8,9 +8,10 @@ MAX_OPEN_REQUEST = 5
 
 # First function detects if the first line is empty and if the sequence is correct
 def first_process_seq(client_list):
-    if client_list[0] == "":
+    if client_list[0] == '':
         return_message = "ALIVE"
     else:
+        # The first element on the list must be the sequence
         valid_letters = ['A', 'C', 'G', 'T', 'a', 'c', 'g', 't']
         valid = True
         for letter in client_list[0]:
@@ -18,11 +19,14 @@ def first_process_seq(client_list):
                 valid = False
         if valid:
             return_message = "OK"
+        # Valid is only True when all letters are valid
         else:
             return_message = "ERROR"
+        # There must be at least one non valid letter for valid to be false
     return return_message
 
 
+# Second function carries out the desired operations
 def function_process_seq(client_list):
     return_msg = ""
     # list with possible operations requested
@@ -68,9 +72,23 @@ while True:
 
     # Generating the response
     message = first_process_seq(info)
-    # If the sequence is not valid we don't carry out the functions. I t would raise an error
+    # If the sequence is not valid we don't carry out the functions. It would raise an error
     if message == "ERROR":
         final_message = "ERROR"
+    # If the message is alive, the program hasn't checked if the seq is valid so we do that now
+    elif message == "ALIVE":
+        valid_letter = ['A', 'C', 'G', 'T', 'a', 'c', 'g', 't']
+        okay = True
+        for base in info[1]:
+            if base not in valid_letter:
+                okay = False
+        # If everything is fine we carry out the second function
+        if okay:
+            secondmessage = function_process_seq(info)
+            final_message = message + "\n" + secondmessage
+        else:
+            # The server is alive but the sequence introduced is not valid
+            final_message = "ALIVE\nERROR"
     else:
         secondmessage = function_process_seq(info)
         final_message = message + "\n" + secondmessage

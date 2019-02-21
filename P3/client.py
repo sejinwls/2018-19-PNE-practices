@@ -3,7 +3,9 @@ import socket
 IP = "192.168.1.48"
 PORT = 8081
 
-msg = "AYGT\ncomplement\nreversse"
+msg = "\ncomplement\npercG"
+
+# Create socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # establish the connection to the Server (IP, PORT)

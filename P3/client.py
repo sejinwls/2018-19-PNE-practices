@@ -1,9 +1,11 @@
 import socket
 
-IP = "212.128.253.68"
+IP = "192.168.1.48"
 PORT = 8081
 
-msg = "\nAGCGTT\ncomplement"
+msg = "\ncomplement\npercG"
+
+# Create socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # establish the connection to the Server (IP, PORT)
@@ -13,9 +15,9 @@ s.connect((IP, PORT))
 s.send(str.encode(msg))
 
 # Receive the servers respoinse
-response = s.recv(2048).decode()
-
+msg = s.recv(2048).decode("utf-8")
+print("Message from server: ")
 # Print the server's response
-print("Response: {}".format(response))
+print(msg)
 
 s.close()

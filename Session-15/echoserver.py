@@ -29,7 +29,8 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             if msg != "":
                 f = open('echoform2.html', 'r')
                 contents = f.read()
-
+                contents = contents.replace('%message%',msg)
+                contents = contents.replace('+', ' ')
                 self.send_response(200)
 
                 self.send_header('Content-Type', 'text/html')

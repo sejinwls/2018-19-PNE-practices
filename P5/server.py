@@ -12,7 +12,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         print("Request line:" + self.requestline)
         print("   cmd: " + self.command)
         print("   Path: " + self.path)
-        if self.requestline.startswith("GET / ") or self.requestline.startswith("GET /index"):
+        if self.requestline.startswith("GET /index ") or self.requestline.startswith("GET /"):
             f = open('index.html', 'r')
             content = f.read()
             f.close()

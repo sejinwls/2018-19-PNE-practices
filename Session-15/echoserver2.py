@@ -2,7 +2,7 @@ import http.server
 import socketserver
 import termcolor
 
-PORT = 8080
+PORT = 8081
 
 
 class TestHandler(http.server.BaseHTTPRequestHandler):
@@ -13,8 +13,9 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         termcolor.cprint(self.requestline, 'green')
         inputs = self.requestline[14:].split(" ")
         msg = inputs[0]
+
         if not("msg" in self.requestline):
-            f = open('echoform.html', 'r')
+            f = open('2echoform.html', 'r')
             contents = f.read()
 
             self.send_response(200)
@@ -26,8 +27,10 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
             # --Sending he body of the response message
             self.wfile.write(str.encode(contents))
         elif "msg" in self.requestline:
-
             if msg != "":
+                if "&" in msg:
+                    msg = msg[0:msg.find("&")]
+                    msg = msg.upper()
                 f = open('echoform2.html', 'r')
                 contents = f.read()
                 contents = contents.replace('%message%',msg)

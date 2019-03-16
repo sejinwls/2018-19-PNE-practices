@@ -5,16 +5,23 @@
     <title>main page</title>
 </head>
 <body>
+    <form action="echo" method=""get>
     Type a sequence:<br>
-    <input type="text" name="seq"><br>
-    <input type="checkbox" name="len">len<br>
+    <input type="text" name="seq">
+    <br>
+    <input type="checkbox" name="len">len
+    <br>
     <select name="operation">
         <option value="count">Count</option>
         <option value="perc">Percentage</option>
-    </select><br>
+    </select>
+    <br>
     <input type="radio" name="base" value="A" checked> A
     <input type="radio" name="base" value="C"> C
     <input type="radio" name="base" value="T"> T
     <input type="radio" name="base" value="G"> G
+    <br>
+    <input type="submit" value="send">
+    </form>
 </body>
 </html>
